@@ -5,7 +5,7 @@ import { BsBookmarkStarFill } from "react-icons/bs";
 
 
 const Blog = ({blog,handleBookmarks,handleMarkasread}) => {
-    const {title,cover,author,author_img,reading_time,posted_date,hashtags} = blog;
+    const {id,title,cover,author,author_img,reading_time,posted_date,hashtags} = blog;
     return (
         <div className='mb-20'>
             <img className="w-full h-64 object-cover rounded-lg mb-5" src={cover} alt="" />
@@ -26,7 +26,7 @@ const Blog = ({blog,handleBookmarks,handleMarkasread}) => {
         <h2 className="text-2xl font-bold">{title}</h2>
         <p>{hashtags.map((hash,index) => <span key={index}><a href="">{hash}</a> </span>)}</p>
 
-         <button onClick={()=>handleMarkasread(reading_time)} className='text-purple-400 font-bold underline'>Mark As Read</button>   
+         <button onClick={()=>handleMarkasread(id,reading_time)} className='text-blue-400 font-bold underline'>Mark As Read</button>   
         </div>
     );
 };
